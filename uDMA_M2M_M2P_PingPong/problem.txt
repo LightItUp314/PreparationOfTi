@@ -1,0 +1,5 @@
+x.com 使用非16进制发送数据时。是一个一个字符发送的！！注意发送的是字符！！！eg：$ 30 30 30 +发送到单片机段接受的数据为 0x24 0x20(空格space) 0x03(3)  0x00(0)  0x20……
+所以用x.com传输数据时记得用16进制发送模式模拟
+
+使用#include "hw_timer.h"若是显示 no such file就是用如下的“绝对路径”引入
+#include "ti/devices/msp432e4/driverlib/inc/hw_timer.h"

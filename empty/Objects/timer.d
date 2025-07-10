@@ -1,0 +1,16 @@
+.\objects\timer.o: Libarary\timer.c
+.\objects\timer.o: .\source\ti/devices/msp432e4/inc/msp432e411y.h
+.\objects\timer.o: .\source\third_party\CMSIS\Include\core_cm4.h
+.\objects\timer.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\timer.o: .\source\third_party\CMSIS\Include\cmsis_version.h
+.\objects\timer.o: .\source\third_party\CMSIS\Include\cmsis_compiler.h
+.\objects\timer.o: .\source\third_party\CMSIS\Include\cmsis_armcc.h
+.\objects\timer.o: .\source\third_party\CMSIS\Include\mpu_armv7.h
+.\objects\timer.o: .\source\ti/devices/msp432e4/inc/system_msp432e411y.h
+.\objects\timer.o: Libarary\types.h
+.\objects\timer.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\timer.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_timer.h
+.\objects\timer.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\timer.o: Libarary\debug.h
+.\objects\timer.o: Libarary\interrupt.h
+.\objects\timer.o: Libarary\timer.h

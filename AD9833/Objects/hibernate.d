@@ -1,0 +1,11 @@
+.\objects\hibernate.o: Libarary\hibernate.c
+.\objects\hibernate.o: Libarary\types.h
+.\objects\hibernate.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\hibernate.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\hibernate.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\time.h
+.\objects\hibernate.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_hibernate.h
+.\objects\hibernate.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\hibernate.o: Libarary\debug.h
+.\objects\hibernate.o: Libarary\hibernate.h
+.\objects\hibernate.o: Libarary\interrupt.h
+.\objects\hibernate.o: Libarary\sysctl.h

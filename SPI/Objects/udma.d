@@ -1,0 +1,9 @@
+.\objects\udma.o: Libarary\udma.c
+.\objects\udma.o: Libarary\types.h
+.\objects\udma.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\udma.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\udma.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\udma.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_udma.h
+.\objects\udma.o: Libarary\debug.h
+.\objects\udma.o: Libarary\interrupt.h
+.\objects\udma.o: Libarary\udma.h

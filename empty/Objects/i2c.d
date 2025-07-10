@@ -1,0 +1,16 @@
+.\objects\i2c.o: Libarary\i2c.c
+.\objects\i2c.o: .\source\ti/devices/msp432e4/inc/msp432e411y.h
+.\objects\i2c.o: .\source\third_party\CMSIS\Include\core_cm4.h
+.\objects\i2c.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\i2c.o: .\source\third_party\CMSIS\Include\cmsis_version.h
+.\objects\i2c.o: .\source\third_party\CMSIS\Include\cmsis_compiler.h
+.\objects\i2c.o: .\source\third_party\CMSIS\Include\cmsis_armcc.h
+.\objects\i2c.o: .\source\third_party\CMSIS\Include\mpu_armv7.h
+.\objects\i2c.o: .\source\ti/devices/msp432e4/inc/system_msp432e411y.h
+.\objects\i2c.o: Libarary\types.h
+.\objects\i2c.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\i2c.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_i2c.h
+.\objects\i2c.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\i2c.o: Libarary\debug.h
+.\objects\i2c.o: Libarary\i2c.h
+.\objects\i2c.o: Libarary\interrupt.h

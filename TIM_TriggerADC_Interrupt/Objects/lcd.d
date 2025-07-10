@@ -1,0 +1,16 @@
+.\objects\lcd.o: Libarary\lcd.c
+.\objects\lcd.o: .\source\ti/devices/msp432e4/inc/msp432e411y.h
+.\objects\lcd.o: .\source\third_party\CMSIS\Include\core_cm4.h
+.\objects\lcd.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lcd.o: .\source\third_party\CMSIS\Include\cmsis_version.h
+.\objects\lcd.o: .\source\third_party\CMSIS\Include\cmsis_compiler.h
+.\objects\lcd.o: .\source\third_party\CMSIS\Include\cmsis_armcc.h
+.\objects\lcd.o: .\source\third_party\CMSIS\Include\mpu_armv7.h
+.\objects\lcd.o: .\source\ti/devices/msp432e4/inc/system_msp432e411y.h
+.\objects\lcd.o: Libarary\types.h
+.\objects\lcd.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\lcd.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_lcd.h
+.\objects\lcd.o: Libarary\interrupt.h
+.\objects\lcd.o: Libarary\sysctl.h
+.\objects\lcd.o: Libarary\lcd.h
+.\objects\lcd.o: Libarary\debug.h

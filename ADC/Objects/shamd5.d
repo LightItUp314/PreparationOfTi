@@ -1,0 +1,16 @@
+.\objects\shamd5.o: Libarary\shamd5.c
+.\objects\shamd5.o: .\source\ti/devices/msp432e4/inc/msp432e411y.h
+.\objects\shamd5.o: .\source\third_party\CMSIS\Include\core_cm4.h
+.\objects\shamd5.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\shamd5.o: .\source\third_party\CMSIS\Include\cmsis_version.h
+.\objects\shamd5.o: .\source\third_party\CMSIS\Include\cmsis_compiler.h
+.\objects\shamd5.o: .\source\third_party\CMSIS\Include\cmsis_armcc.h
+.\objects\shamd5.o: .\source\third_party\CMSIS\Include\mpu_armv7.h
+.\objects\shamd5.o: .\source\ti/devices/msp432e4/inc/system_msp432e411y.h
+.\objects\shamd5.o: Libarary\types.h
+.\objects\shamd5.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\shamd5.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h
+.\objects\shamd5.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_shamd5.h
+.\objects\shamd5.o: Libarary\debug.h
+.\objects\shamd5.o: Libarary\interrupt.h
+.\objects\shamd5.o: Libarary\shamd5.h

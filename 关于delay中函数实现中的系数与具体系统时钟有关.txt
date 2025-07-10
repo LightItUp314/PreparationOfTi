@@ -1,0 +1,19 @@
+#include "delay.h"
+
+void delay_us(uint16_t nus)//SysCtlDelay参数为1函数为3个时钟周期25ns
+{
+	SysCtlDelay(40 * nus);//40*25=1000ns=1us
+}
+
+void delay_ms(uint16_t nms)
+{
+	SysCtlDelay(40000* nms);
+}
+
+/*
+SysCtlDelay的汇编代码有三行，也就是说执行一次SysCtlDelay要花3/sysclock
+3/120000000=2.5e8 为25ns
+也就是说执行SysCtlDelay 40次才是1us
+因此如果系统时钟变化u要想得到具体的delay要修改40这个参数
+
+*/

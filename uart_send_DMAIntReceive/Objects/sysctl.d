@@ -1,0 +1,11 @@
+.\objects\sysctl.o: Libarary\sysctl.c
+.\objects\sysctl.o: Libarary\types.h
+.\objects\sysctl.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\sysctl.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sysctl.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h
+.\objects\sysctl.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\sysctl.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_flash.h
+.\objects\sysctl.o: Libarary\cpu.h
+.\objects\sysctl.o: Libarary\debug.h
+.\objects\sysctl.o: Libarary\interrupt.h
+.\objects\sysctl.o: Libarary\sysctl.h

@@ -1,0 +1,677 @@
+Dependencies for Project 'Project', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\source\startup_msp432e401y_uvision.s)(0x5EE7D856)(--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I .\source-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include--pd "__UVISION_VERSION SETA 540" --pd "__MSP432E401Y__ SETA 1"--list .\listings\startup_msp432e401y_uvision.lst --xref -o .\objects\startup_msp432e401y_uvision.o --depend .\objects\startup_msp432e401y_uvision.d)
+F (.\source\system_msp432e401y.c)(0x5EE7D855)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\system_msp432e401y.o --omf_browse .\objects\system_msp432e401y.crf --depend .\objects\system_msp432e401y.d)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/inc/msp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp432e401y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e401y.h)(0x5EE7D856)
+F (.\Libarary\adc.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\adc.o --omf_browse .\objects\adc.crf --depend .\objects\adc.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_adc.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\adc.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\adc.h)(0x5EE7D856)()
+F (.\Libarary\aes.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\aes.o --omf_browse .\objects\aes.crf --depend .\objects\aes.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_aes.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_ccm.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (Libarary\aes.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\aes.h)(0x5EE7D856)()
+F (.\Libarary\can.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\can.o --omf_browse .\objects\can.crf --depend .\objects\can.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_can.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\can.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\can.h)(0x5EE7D856)()
+F (.\Libarary\comp.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\comp.o --omf_browse .\objects\comp.crf --depend .\objects\comp.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_comp.h)(0x5EE7D856)
+I (Libarary\comp.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\comp.h)(0x5EE7D856)()
+F (.\Libarary\cpu.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\cpu.o --omf_browse .\objects\cpu.crf --depend .\objects\cpu.d)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (Libarary\cpu.h)(0x5EE7D856)
+F (.\Libarary\cpu.h)(0x5EE7D856)()
+F (.\Libarary\crc.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\crc.o --omf_browse .\objects\crc.crf --depend .\objects\crc.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_ccm.h)(0x5EE7D856)
+I (Libarary\crc.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+F (.\Libarary\crc.h)(0x5EE7D856)()
+F (.\Libarary\debug.h)(0x5EE7D856)()
+F (.\Libarary\des.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\des.o --omf_browse .\objects\des.crf --depend .\objects\des.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_des.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\des.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\des.h)(0x5EE7D856)()
+F (.\Libarary\driverlib.h)(0x5EE7D856)()
+F (.\Libarary\eeprom.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\eeprom.o --omf_browse .\objects\eeprom.crf --depend .\objects\eeprom.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_eeprom.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_flash.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\flash.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+I (Libarary\eeprom.h)(0x5EE7D856)
+F (.\Libarary\eeprom.h)(0x5EE7D856)()
+F (.\Libarary\emac.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\emac.o --omf_browse .\objects\emac.crf --depend .\objects\emac.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_emac.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\emac.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\sw_crc.h)(0x5EE7D856)
+F (.\Libarary\emac.h)(0x5EE7D856)()
+F (.\Libarary\epi.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\epi.o --omf_browse .\objects\epi.crf --depend .\objects\epi.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_epi.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\epi.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\epi.h)(0x5EE7D856)()
+F (.\Libarary\flash.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\flash.o --omf_browse .\objects\flash.crf --depend .\objects\flash.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_flash.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\flash.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\flash.h)(0x5EE7D856)()
+F (.\Libarary\fpu.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\fpu.o --omf_browse .\objects\fpu.crf --depend .\objects\fpu.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (Libarary\fpu.h)(0x5EE7D856)
+F (.\Libarary\fpu.h)(0x5EE7D856)()
+F (.\Libarary\gpio.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_gpio.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\gpio.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\gpio.h)(0x5EE7D856)()
+F (.\Libarary\hibernate.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\hibernate.o --omf_browse .\objects\hibernate.crf --depend .\objects\hibernate.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\time.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_hibernate.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\hibernate.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+F (.\Libarary\hibernate.h)(0x5EE7D856)()
+F (.\Libarary\i2c.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_i2c.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\i2c.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\i2c.h)(0x5EE7D856)()
+F (.\Libarary\interrupt.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\interrupt.o --omf_browse .\objects\interrupt.crf --depend .\objects\interrupt.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (Libarary\cpu.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\interrupt.h)(0x5EE7D856)()
+F (.\Libarary\lcd.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_lcd.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+I (Libarary\lcd.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+F (.\Libarary\lcd.h)(0x5EE7D856)()
+F (.\Libarary\mpu.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\mpu.o --omf_browse .\objects\mpu.crf --depend .\objects\mpu.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\mpu.h)(0x5EE7D856)
+F (.\Libarary\mpu.h)(0x5EE7D856)()
+F (.\Libarary\onewire.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\onewire.o --omf_browse .\objects\onewire.crf --depend .\objects\onewire.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_onewire.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\onewire.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+F (.\Libarary\onewire.h)(0x5EE7D856)()
+F (.\Libarary\pin_map.h)(0x5EE7D856)()
+F (.\Libarary\pwm.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_pwm.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\pwm.h)(0x5EE7D856)
+F (.\Libarary\pwm.h)(0x5EE7D856)()
+F (.\Libarary\qei.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\qei.o --omf_browse .\objects\qei.crf --depend .\objects\qei.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_qei.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\qei.h)(0x5EE7D856)
+F (.\Libarary\qei.h)(0x5EE7D856)()
+F (.\Libarary\rom.h)(0x5EE7D856)()
+F (.\Libarary\rom_map.h)(0x5EE7D856)()
+F (.\Libarary\rtos_bindings.h)(0x5EE7D856)()
+F (.\Libarary\shamd5.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\shamd5.o --omf_browse .\objects\shamd5.crf --depend .\objects\shamd5.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_shamd5.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\shamd5.h)(0x5EE7D856)
+F (.\Libarary\shamd5.h)(0x5EE7D856)()
+F (.\Libarary\ssi.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\ssi.o --omf_browse .\objects\ssi.crf --depend .\objects\ssi.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_ssi.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\ssi.h)(0x5EE7D856)
+F (.\Libarary\ssi.h)(0x5EE7D856)()
+F (.\Libarary\sw_crc.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\sw_crc.o --omf_browse .\objects\sw_crc.crf --depend .\objects\sw_crc.d)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (Libarary\sw_crc.h)(0x5EE7D856)
+F (.\Libarary\sw_crc.h)(0x5EE7D856)()
+F (.\Libarary\sysctl.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\sysctl.o --omf_browse .\objects\sysctl.crf --depend .\objects\sysctl.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_flash.h)(0x5EE7D856)
+I (Libarary\cpu.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+F (.\Libarary\sysctl.h)(0x5EE7D856)()
+F (.\Libarary\sysexc.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\sysexc.o --omf_browse .\objects\sysexc.crf --depend .\objects\sysexc.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysexc.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+F (.\Libarary\sysexc.h)(0x5EE7D856)()
+F (.\Libarary\systick.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_nvic.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\systick.h)(0x5EE7D856)
+F (.\Libarary\systick.h)(0x5EE7D856)()
+F (.\Libarary\timer.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_timer.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\timer.h)(0x5EE7D856)
+F (.\Libarary\timer.h)(0x5EE7D856)()
+F (.\Libarary\types.h)(0x5EE7D856)()
+F (.\Libarary\uart.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_uart.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\uart.h)(0x5EE7D856)
+F (.\Libarary\uart.h)(0x5EE7D856)()
+F (.\Libarary\udma.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\udma.o --omf_browse .\objects\udma.crf --depend .\objects\udma.d)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_udma.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\udma.h)(0x5EE7D856)
+F (.\Libarary\udma.h)(0x5EE7D856)()
+F (.\Libarary\usb.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\usb.o --omf_browse .\objects\usb.crf --depend .\objects\usb.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h)(0x5EE7D856)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_usb.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\sysctl.h)(0x5EE7D856)
+I (Libarary\udma.h)(0x5EE7D856)
+I (Libarary\usb.h)(0x5EE7D856)
+F (.\Libarary\usb.h)(0x5EE7D856)()
+F (.\Libarary\watchdog.c)(0x5EE7D856)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\watchdog.o --omf_browse .\objects\watchdog.crf --depend .\objects\watchdog.d)
+I (.\source\ti/devices/msp432e4/inc/msp432e411y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e411y.h)(0x5EE7D856)
+I (Libarary\types.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\Source\ti\devices\msp432e4\driverlib\inc/hw_watchdog.h)(0x5EE7D856)
+I (Libarary\debug.h)(0x5EE7D856)
+I (Libarary\interrupt.h)(0x5EE7D856)
+I (Libarary\watchdog.h)(0x5EE7D856)
+F (.\Libarary\watchdog.h)(0x5EE7D856)()
+F (.\Hardware\SPI_u.c)(0x686F7681)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\spi_u.o --omf_browse .\objects\spi_u.crf --depend .\objects\spi_u.d)
+I (Hardware\SPI_u.h)(0x686F7433)
+I (.\source\ti/devices/msp432e4/driverlib/driverlib.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp432e401y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e401y.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/adc.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/aes.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/can.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/comp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/cpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/debug.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/des.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/eeprom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/emac.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/epi.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/flash.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/fpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/gpio.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/hibernate.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\time.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/i2c.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/interrupt.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/mpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pin_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pwm.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/qei.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/shamd5.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/ssi.h)(0x68690B9B)
+I (.\source\ti/devices/msp432e4/driverlib/sw_crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysctl.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysexc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/systick.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/timer.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/types.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/uart.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/udma.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/usb.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/watchdog.h)(0x5EE7D856)
+F (.\Hardware\SPI_u.h)(0x686F7433)()
+F (.\User\main.c)(0x686F89EE)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\source\ti/devices/msp432e4/driverlib/driverlib.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp432e401y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e401y.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/adc.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/aes.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/can.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/comp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/cpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/debug.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/des.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/eeprom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/emac.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/epi.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/flash.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/fpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/gpio.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/hibernate.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\time.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/i2c.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/interrupt.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/mpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pin_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pwm.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/qei.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/shamd5.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/ssi.h)(0x68690B9B)
+I (.\source\ti/devices/msp432e4/driverlib/sw_crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysctl.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysexc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/systick.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/timer.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/types.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/uart.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/udma.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/usb.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/watchdog.h)(0x5EE7D856)
+I (User\system_init.h)(0x64B697B8)
+I (User\W25Q64.h)(0x686F8994)
+I (.\Hardware\SPI_u.h)(0x686F7433)
+F (.\User\system_init.c)(0x650192EA)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\system_init.o --omf_browse .\objects\system_init.crf --depend .\objects\system_init.d)
+I (User\system_init.h)(0x64B697B8)
+I (.\source\ti/devices/msp432e4/driverlib/driverlib.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp432e401y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e401y.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/adc.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/aes.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/can.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/comp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/cpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/debug.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/des.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/eeprom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/emac.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/epi.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/flash.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/fpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/gpio.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/hibernate.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\time.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/i2c.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/interrupt.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/mpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pin_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pwm.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/qei.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/shamd5.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/ssi.h)(0x68690B9B)
+I (.\source\ti/devices/msp432e4/driverlib/sw_crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysctl.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysexc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/systick.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/timer.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/types.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/uart.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/udma.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/usb.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/watchdog.h)(0x5EE7D856)
+F (.\User\system_init.h)(0x64B697B8)()
+F (.\User\W25Q64.c)(0x686F8966)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\w25q64.o --omf_browse .\objects\w25q64.crf --depend .\objects\w25q64.d)
+I (User\W25Q64.h)(0x686F8994)
+I (.\Hardware\SPI_u.h)(0x686F7433)
+I (.\source\ti/devices/msp432e4/driverlib/driverlib.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/msp432e401y.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\core_cm4.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\source\third_party\CMSIS\Include\cmsis_version.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_compiler.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\cmsis_armcc.h)(0x5EE7D856)
+I (.\source\third_party\CMSIS\Include\mpu_armv7.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/inc/system_msp432e401y.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/adc.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/aes.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/can.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/comp.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/cpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/debug.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/des.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/eeprom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/emac.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/epi.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/flash.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/fpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/gpio.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/hibernate.h)(0x5EE7D856)
+I (D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\include\time.h)(0x5E8E3CC2)
+I (.\source\ti/devices/msp432e4/driverlib/i2c.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/interrupt.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/mpu.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pin_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/pwm.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/qei.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/rom_map.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/shamd5.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/ssi.h)(0x68690B9B)
+I (.\source\ti/devices/msp432e4/driverlib/sw_crc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysctl.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/sysexc.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/systick.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/timer.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/types.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/uart.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/udma.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/usb.h)(0x5EE7D856)
+I (.\source\ti/devices/msp432e4/driverlib/watchdog.h)(0x5EE7D856)
+F (.\User\W25Q64.h)(0x686F8994)()
