@@ -49,3 +49,4 @@
 .\objects\uart_1.o: .\source\ti/devices/msp432e4/driverlib/watchdog.h
 .\objects\uart_1.o: Hardware\uart.h
 .\objects\uart_1.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\uart_1.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdlib.h

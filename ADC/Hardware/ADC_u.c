@@ -42,6 +42,8 @@ void ADC_SimpleInit(void)
 		//关于时钟的配置见相关工程中timer0的配置 
     MAP_ADCSequenceConfigure(ADC0_BASE, 2, ADC_TRIGGER_TIMER, 2);//1个触发信号 → 执行Sequencer内所有Steps
 		//Squencer大致配置完毕
+		/* Since sample sequence 2 is now configured, it must be enabled. */
+    MAP_ADCSequenceEnable(ADC0_BASE, 2);//使能Sequence
 		//首先配置dma相关参数
 		MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UDMA);
 		while(!(SysCtlPeripheralReady(SYSCTL_PERIPH_UDMA)));

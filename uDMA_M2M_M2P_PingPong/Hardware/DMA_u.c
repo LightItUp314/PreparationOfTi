@@ -135,9 +135,9 @@ void DMA_M2P_Init(void)
 	MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UDMA);
 	// 等待时钟稳定
   while (!MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_UDMA));
-		//2. Enable the μDMA controller by setting the MASTEREN bit of the DMA Configuration (DMACFG)register
+	//2. Enable the μDMA controller by setting the MASTEREN bit of the DMA Configuration (DMACFG)register
 	MAP_uDMAEnable();
-		/*3. Program the location of the channel control table by writing the base address of the table to the DMA
+	/*3. Program the location of the channel control table by writing the base address of the table to the DMA
 Channel Control Base Pointer (DMACTLBASE) register. The base address must be aligned on a 1024-
 byte boundary.*/
 	MAP_uDMAControlBaseSet(pui8ControlTable);

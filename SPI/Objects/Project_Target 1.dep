@@ -523,7 +523,7 @@ I (.\source\ti/devices/msp432e4/driverlib/udma.h)(0x5EE7D856)
 I (.\source\ti/devices/msp432e4/driverlib/usb.h)(0x5EE7D856)
 I (.\source\ti/devices/msp432e4/driverlib/watchdog.h)(0x5EE7D856)
 F (.\Hardware\SPI_u.h)(0x686F7433)()
-F (.\User\main.c)(0x686F89EE)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x687073B2)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\source\third_party\CMSIS\Include -I .\source -I .\Hardware -I .\User -I .\source\ti\devices\msp432e4\inc -I .\Source\ti\devices\msp432e4\driverlib --diag_suppress=2803,1,1035-ID:\HardwareDevelop\keil_MDK_C51\MDK_Pack\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="540" -D__MSP432E401Y__ -DARM_MATH_CM4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\source\ti/devices/msp432e4/driverlib/driverlib.h)(0x5EE7D856)
 I (.\source\ti/devices/msp432e4/inc/msp.h)(0x5EE7D856)
 I (.\source\ti/devices/msp432e4/inc/msp432e401y.h)(0x5EE7D856)

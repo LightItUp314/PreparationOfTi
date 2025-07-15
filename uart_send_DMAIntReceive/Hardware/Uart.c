@@ -1,5 +1,5 @@
 #include "Uart.h"
-
+#include <stdlib.h> // 包含 atof 函数
 
 extern uint32_t ui32SysClock;//单片机主频率
 uint16_t AM_baoluo[1024];
@@ -175,8 +175,26 @@ void UARTSend(uint32_t ui32Base, const uint8_t *pui8Buffer, uint32_t ui32Count)
 			如果 FIFO 已满，直接丢弃数据，返回失败（不等待）
 			会丢数据 damn
 			*/
-
 		}
+}
+
+
+#define VOFA_SendFloatEND  MAP_UARTCharPut(ui32Base,0x00); \
+                            MAP_UARTCharPut(ui32Base,0x00);\
+                            MAP_UARTCharPut(ui32Base,0x80);\
+                            MAP_UARTCharPut(ui32Base,0x7f);
+
+void VOFA_SendFloat(uint32_t ui32Base,const float * pfbuffer,uint32_t ui32Count)
+{
+	while(ui32Count--)
+	{
+		MAP_UARTCharPut(ui32Base, *(char *)pfbuffer);//put推出，即发送 
+		MAP_UARTCharPut(ui32Base, *(((char *)pfbuffer)+1));
+		MAP_UARTCharPut(ui32Base, *(((char *)pfbuffer)+2));
+		MAP_UARTCharPut(ui32Base, *(((char *)pfbuffer)+3));
+		pfbuffer++;
+		VOFA_SendFloatEND
+	}
 }
 //主函数中按情况使用
 void UARTSend_u(const uint8_t *pui8Buffer,uint32_t len)
@@ -188,18 +206,14 @@ void UARTSend_u(const uint8_t *pui8Buffer,uint32_t len)
 //sprintf 函数的返回值是格式化字符串的长度（不包括终止符 \0），类型为 int。在大多数情况下，int 类型的返回值可以安全地赋值给 size_t 类型的变量，因为 size_t 通常是一个无符号整数类型，足够大以表示字符串的长度。
 
 //以UART0的接收为例子
-typedef enum {
-    UART_RECEIVE_IDLE,          // 空闲状态，等待接收数据
-    UART_RECEIVE_HEADER,        // 正在接收包头
-    UART_RECEIVE_DATA,          // 正在接收数据
-    UART_RECEIVE_TAIL,          // 正在接收包尾
-} UART_ReceiveState;
+
 bool UART_RECEIVE_ERROR=false;
 int uart_index = -HEAD_TAIL_LENTH;
 UART_ReceiveState UART0_ReceiveState=UART_RECEIVE_IDLE;
 uint8_t receivedByte;
 uint8_t UART0_ReceiveBuf[ReceiveBufLenth];
 uint16_t index_p=0;
+
 //void UART0_IRQHandler(void)
 //{
 //	uint32_t ui32Status;
@@ -289,3 +303,114 @@ uint16_t index_p=0;
 ////		}
 //	}
 //}
+extern float arr[5];
+typedef enum {
+    UART7_RECEIVE_IDLE,          
+		UART7_RECEIVE_DATA,
+} UART7_ReceiveState;
+UART7_ReceiveState U7State=UART7_RECEIVE_IDLE;
+uint8_t ReceiveData_UART7[BUF_LEN];
+uint8_t index_U7;
+void ProcessData(uint8_t* buf,float *arr)
+{
+	uint8_t index=10*(buf[0]-'0')+ (buf[1] - '0');
+	arr[index] = atof((char *)&buf[2]);
+}
+void
+UART7_IRQHandler(void)
+{
+	uint32_t ui32Status;
+
+    //
+    // Get the interrrupt status.
+    //
+    ui32Status = MAP_UARTIntStatus(UART7_BASE, true);
+
+    //
+    // Clear the asserted interrupts.
+    //
+    MAP_UARTIntClear(UART7_BASE, ui32Status);
+
+    //
+    // Loop while there are characters in the receive FIFO.
+    //
+    while(MAP_UARTCharsAvail(UART7_BASE))
+    {
+			receivedByte = MAP_UARTCharGetNonBlocking(UART7_BASE);
+				switch(U7State)
+				{
+					 
+					case  UART7_RECEIVE_IDLE:
+						if (receivedByte==HEAD)
+						{
+							U7State=UART7_RECEIVE_DATA;
+						}
+					break;
+					case UART7_RECEIVE_DATA:
+						if(receivedByte!=TAIL){
+							ReceiveData_UART7[index_U7++]=receivedByte;
+						}
+						else{
+							index_U7=0;
+							
+							U7State=UART7_RECEIVE_IDLE;
+						}
+						break;
+				}
+    }
+	
+}
+//_UART7
+//PC5:TX   RC4:RX
+
+void VOFA_init(void)
+{
+		
+
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UART7);
+	
+	//GPIO方面
+	
+    MAP_GPIOPinConfigure(GPIO_PC5_U7TX);
+    MAP_GPIOPinConfigure(GPIO_PC4_U7RX);
+    MAP_GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_4 | GPIO_PIN_5);
+	
+	//UART方面
+	/* Configure the UART for 115200 bps 8-N-1 format */
+    MAP_UARTConfigSetExpClk(UART7_BASE, ui32SysClock, 115200,
+                            (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
+                             UART_CONFIG_PAR_NONE));
+//		MAP_UARTFIFODisable(UART7_BASE);//不使用FIFO！！实时性要求高
+		MAP_IntEnable(INT_UART7);
+		//调用这个函数后，NVIC会允许UART中断被处理
+		//
+		// Enable the UART DMA TX/RX interrupts. 
+		//
+		MAP_UARTIntEnable(UART7_BASE, UART_INT_RT|UART_INT_RX);
+		//当然也要有总的开启"可屏蔽"中断的	MAP_IntMasterEnable  常在main中while前执行
+		//在main中执行
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

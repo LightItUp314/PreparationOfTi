@@ -16,7 +16,13 @@ typedef enum {
     usart0_u = 1,//处理bluetooth
     // 其他标志位定义
 }usart_user;
-
+typedef enum {
+    UART_RECEIVE_IDLE,          // 空闲状态，等待接收数据
+    UART_RECEIVE_HEADER,        // 正在接收包头
+    UART_RECEIVE_DATA,          // 正在接收数据
+    UART_RECEIVE_TAIL,          // 正在接收包尾
+		
+} UART_ReceiveState;
 //#define printf_u(...) do { \
 //    size_t __size; \
 //    __size = sprintf((char *)u_buf, __VA_ARGS__); \
@@ -30,6 +36,7 @@ typedef enum {
 #define TAIL '+'
 #define HEAD_TAIL_LENTH 3
 #define ReceiveBufLenth 8
+#define BUF_LEN 256
 #define printf_u(...) do { \
     size_t __size; \
     __size = sprintf((char *)u_buf, __VA_ARGS__); \
@@ -43,4 +50,6 @@ typedef enum {
 void UART_Init(void);
 void UARTSend(uint32_t ui32Base, const uint8_t *pui8Buffer, uint32_t ui32Count);
 void UARTSend_u(const uint8_t *pui8Buffer,uint32_t len);
+void VOFA_init(void);
+void VOFA_SendFloat(uint32_t ui32Base,const float * pfbuffer,uint32_t ui32Count);
 #endif

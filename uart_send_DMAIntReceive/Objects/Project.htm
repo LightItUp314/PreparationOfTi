@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Jul 06 17:45:47 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jul 11 15:12:15 2025
 <BR><P>
 <H3>Maximum Stack Usage =         76 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -131,7 +131,7 @@ Function Pointers
  <LI><a href="#[43]">UART4_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
  <LI><a href="#[44]">UART5_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
  <LI><a href="#[45]">UART6_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
- <LI><a href="#[46]">UART7_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
+ <LI><a href="#[46]">UART7_IRQHandler</a> from uart_1.o(i.UART7_IRQHandler) referenced from startup_msp432e401y_uvision.o(RESET)
  <LI><a href="#[37]">UDMAERR_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
  <LI><a href="#[36]">UDMA_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
  <LI><a href="#[34]">USB0_IRQHandler</a> from startup_msp432e401y_uvision.o(.text) referenced from startup_msp432e401y_uvision.o(RESET)
@@ -147,7 +147,7 @@ Global Symbols
 <P><STRONG><a name="[70]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(.text)
 </UL>
-<P><STRONG><a name="[81]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[7f]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[71]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -157,17 +157,17 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[82]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[80]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[83]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[81]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[84]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[82]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[85]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
+<P><STRONG><a name="[83]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
 
-<P><STRONG><a name="[86]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[84]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
 
-<P><STRONG><a name="[87]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
+<P><STRONG><a name="[85]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_msp432e401y_uvision.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(RESET)
@@ -514,9 +514,6 @@ Global Symbols
 <P><STRONG><a name="[45]"></a>UART6_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_msp432e401y_uvision.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(RESET)
 </UL>
-<P><STRONG><a name="[46]"></a>UART7_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_msp432e401y_uvision.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(RESET)
-</UL>
 <P><STRONG><a name="[37]"></a>UDMAERR_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_msp432e401y_uvision.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(RESET)
 </UL>
@@ -535,53 +532,45 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[88]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[86]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[89]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
+<P><STRONG><a name="[87]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
 
-<P><STRONG><a name="[8a]"></a>__decompress2</STRONG> (Thumb, 94 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
+<P><STRONG><a name="[88]"></a>__decompress2</STRONG> (Thumb, 94 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
 
-<P><STRONG><a name="[74]"></a>DMA_UART_RX_Init</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, uart_1.o(i.DMA_UART_RX_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = DMA_UART_RX_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uDMAChannelEnable
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-</UL>
-
-<P><STRONG><a name="[7a]"></a>IntRegister</STRONG> (Thumb, 52 bytes, Stack size 12 bytes, interrupt.o(i.IntRegister))
+<P><STRONG><a name="[78]"></a>IntRegister</STRONG> (Thumb, 52 bytes, Stack size 12 bytes, interrupt.o(i.IntRegister))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = IntRegister
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntRegister
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntRegister
 </UL>
 
-<P><STRONG><a name="[76]"></a>SysCtlClockFreqSet</STRONG> (Thumb, 642 bytes, Stack size 48 bytes, sysctl.o(i.SysCtlClockFreqSet))
+<P><STRONG><a name="[74]"></a>SysCtlClockFreqSet</STRONG> (Thumb, 642 bytes, Stack size 48 bytes, sysctl.o(i.SysCtlClockFreqSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = SysCtlClockFreqSet &rArr; _SysCtlFrequencyGet
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SysCtlMemTimingGet
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SysCtlFrequencyGet
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SysCtlMemTimingGet
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SysCtlFrequencyGet
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
-</UL>
-
-<P><STRONG><a name="[80]"></a>SysTickEnable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, systick.o(i.SysTickEnable))
-<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
 </UL>
 
-<P><STRONG><a name="[7f]"></a>SysTickIntEnable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, systick.o(i.SysTickIntEnable))
-<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
+<P><STRONG><a name="[7e]"></a>SysTickEnable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, systick.o(i.SysTickEnable))
+<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
 </UL>
 
-<P><STRONG><a name="[79]"></a>SysTickIntRegister</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, systick.o(i.SysTickIntRegister))
+<P><STRONG><a name="[7d]"></a>SysTickIntEnable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, systick.o(i.SysTickIntEnable))
+<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
+</UL>
+
+<P><STRONG><a name="[77]"></a>SysTickIntRegister</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, systick.o(i.SysTickIntRegister))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SysTickIntRegister &rArr; IntRegister
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntRegister
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntRegister
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
 </UL>
 
-<P><STRONG><a name="[7e]"></a>SysTickPeriodSet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, systick.o(i.SysTickPeriodSet))
-<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
+<P><STRONG><a name="[7c]"></a>SysTickPeriodSet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, systick.o(i.SysTickPeriodSet))
+<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
 </UL>
 
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, system_init.o(i.SysTick_Handler))
@@ -596,62 +585,61 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(RESET)
 </UL>
-<P><STRONG><a name="[7d]"></a>UARTSend</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, uart_1.o(i.UARTSend))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = UARTSend
+<P><STRONG><a name="[46]"></a>UART7_IRQHandler</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, uart_1.o(i.UART7_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = UART7_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_msp432e401y_uvision.o(RESET)
+</UL>
+<P><STRONG><a name="[7b]"></a>VOFA_SendFloat</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, uart_1.o(i.VOFA_SendFloat))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = VOFA_SendFloat
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7b]"></a>UART_Init</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, uart_1.o(i.UART_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = UART_Init &rArr; DMA_UART_RX_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_UART_RX_Init
+<P><STRONG><a name="[7a]"></a>VOFA_init</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, uart_1.o(i.VOFA_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = VOFA_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8b]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[89]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[8c]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[8a]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[8d]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[8b]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[6e]"></a>main</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[6e]"></a>main</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = main &rArr; sys_init &rArr; SysCtlClockFreqSet &rArr; _SysCtlFrequencyGet
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTSend
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_init
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VOFA_init
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VOFA_SendFloat
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[7c]"></a>sys_init</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, system_init.o(i.sys_init))
+<P><STRONG><a name="[79]"></a>sys_init</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, system_init.o(i.sys_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = sys_init &rArr; SysCtlClockFreqSet &rArr; _SysCtlFrequencyGet
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickPeriodSet
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntRegister
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntEnable
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickEnable
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickPeriodSet
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntRegister
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntEnable
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickEnable
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[75]"></a>uDMAChannelEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, udma.o(i.uDMAChannelEnable))
-<BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_UART_RX_Init
 </UL>
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[78]"></a>_SysCtlFrequencyGet</STRONG> (Thumb, 96 bytes, Stack size 20 bytes, sysctl.o(i._SysCtlFrequencyGet))
+<P><STRONG><a name="[76]"></a>_SysCtlFrequencyGet</STRONG> (Thumb, 96 bytes, Stack size 20 bytes, sysctl.o(i._SysCtlFrequencyGet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = _SysCtlFrequencyGet
 </UL>
-<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
+<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
 </UL>
 
-<P><STRONG><a name="[77]"></a>_SysCtlMemTimingGet</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, sysctl.o(i._SysCtlMemTimingGet))
-<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
+<P><STRONG><a name="[75]"></a>_SysCtlMemTimingGet</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, sysctl.o(i._SysCtlMemTimingGet))
+<BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
 </UL>
 <P>
 <H3>
