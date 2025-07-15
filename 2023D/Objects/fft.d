@@ -54,6 +54,7 @@
 .\objects\fft.o: .\source\ti/devices/msp432e4/driverlib/usb.h
 .\objects\fft.o: .\source\ti/devices/msp432e4/driverlib/watchdog.h
 .\objects\fft.o: User\hamming.h
+.\objects\fft.o: User\bessel.h
 .\objects\fft.o: .\Hardware\Uart.h
 .\objects\fft.o: .\Hardware\uart.h
 .\objects\fft.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdio.h

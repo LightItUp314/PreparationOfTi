@@ -988,11 +988,6 @@
               <FilePath>.\User\arm_common_tables.h</FilePath>
             </File>
             <File>
-              <FileName>shibie.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\shibie.c</FilePath>
-            </File>
-            <File>
               <FileName>fft.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\fft.c</FilePath>
@@ -1016,6 +1011,21 @@
               <FileName>W25Q64.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\W25Q64.c</FilePath>
+            </File>
+            <File>
+              <FileName>bessel.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\bessel.h</FilePath>
+            </File>
+            <File>
+              <FileName>beseel.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\beseel.c</FilePath>
+            </File>
+            <File>
+              <FileName>hamming.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\hamming.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -2,12 +2,15 @@
 #include "arm_const_structs.h"
 #include "ADC_u.h"
 #include "hamming.h"
+#include "bessel.h"
 #include "Uart.h"
 float32_t FFT_In[FFT_LEN*2];
 //float32_t	FFT_IN_Non[FFT_LEN*2];
 float32_t FFT_Mag[FFT_LEN];
-#define id_fc_sample 688
+#define id_fc_sample 683
+//688
 #define delta_id 20
+#define measure_len 81 
 extern float32_t Fs;
 extern float32_t mag_max;
 extern int16_t adc_buff[FFT_LEN];
@@ -108,6 +111,28 @@ void Seek_Min1(float32_t arr[],uint16_t size,uint16_t * id_min)
 			*id_min=i;
 		}
 	}
+}
+uint16_t binarySearchDescending(const float arr[], uint16_t size, float target) {
+  // 边界检查
+    if (target > arr[0]) return 0;       // target比最大值还大
+    if (target <= arr[size - 1]) return size - 1;  // target ≤ 最小值  
+		
+		int left = 0;
+    int right = size - 1;
+    int result = -1;  // 默认-1，表示target比所有元素大
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;  // 防止溢出
+        if (arr[mid] >= target) {
+            result = mid;      // 记录候选位置
+            left = mid + 1;    // 继续向右找更大的索引（因为数组是递减的）
+        } else {
+            right = mid - 1;   // 向左找
+        }
+    }
+
+    
+    return result;
 }
 //可能会用上
 int isFlatUsingDSP(float numbers[], int size, float threshold) {
@@ -268,6 +293,32 @@ uint16_t find_min_index_diff_above_threshold(float32_t mag_arr[], uint32_t size,
 			return min_diff;  // 如果没有找到足够的元素，返回-1
 		}
 }
+float32_t mag_fm_arr[4];//J0 J1 J2 J3 J4
+void GetAccurateMf(uint8_t mf_id,uint8_t range_half,uint8_t * mf_id_accurate)
+{
+	int8_t i;
+	float32_t temp_min=1e12,temp;
+	for(i=-range_half;i<=range_half&&mf_id+i<measure_len;i++)
+	{
+		temp=powf(bessel[0][mf_id+i]-mag_fm_arr[0], 2)+powf(bessel[1][mf_id+i]-mag_fm_arr[1], 2)+powf(bessel[2][mf_id+i]-mag_fm_arr[2], 2)+powf(bessel[3][mf_id+i]-mag_fm_arr[3], 2);
+		if(temp_min<temp)
+		{
+			*mf_id_accurate=mf_id+i;
+		}
+	}
+}
+void guji_mf(uint16_t F,float32_t* mf,float32_t range_half)
+{
+	uint8_t i,mf_id;
+	for(i=0;i<4;i++)
+	{
+		Seek_Max(FFT_Mag,id_fc_sample-(int)(F*i*FFT_LEN/parameter_s[0]),range_half,&mag_fm_arr[i]);
+	}
+	float32_t measure=mag_fm_arr[2]/mag_fm_arr[3];
+	mf_id=binarySearchDescending(measure_arr,measure_len,measure);
+	GetAccurateMf(mf_id,2,&mf_id);
+	*mf=1+0.05f*mf_id;
+}
 bool shibie_2ask(int16_t adc_buff[],uint8_t range,float32_t thred)
 {
 	bool flag_temp=1;
@@ -293,7 +344,7 @@ bool shibie_2ask(int16_t adc_buff[],uint8_t range,float32_t thred)
 	return false;
 }
 uint16_t id_r[5]={726,765,805,844,883};
-//id_fc_sample 688 右侧 id:726   765   805   844   883
+//id_fc_sample 681 右侧 id:726   765   805   844   883
 uint8_t whetherZero_arr[5];
 uint8_t guji_2ask(void)
 {

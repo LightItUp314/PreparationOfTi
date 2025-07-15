@@ -10,6 +10,11 @@
 #include "fft.h"
 extern int16_t adc_buff[FFT_LEN];
 extern float32_t FFT_Mag[FFT_LEN];
+#define AM_TYPE 0x0
+#define FM_TYPE 0x1
+#define ASK_TYPE 0x2
+#define FSK_TYPE 0x03
+#define PSK_TYPE 0x04
 float32_t mag_arr[15];
 float32_t mag_max;
 uint16_t mag_max_id;
@@ -17,7 +22,8 @@ uint16_t F;
 uint16_t Rb;
 float32_t h;
 float32_t ma;
-bool basic_flag=false;
+float32_t mf;
+bool basic_flag=true;
 bool ADC_Done=false;
 float32_t parameter_b[64];
 float32_t parameter_s[64];
@@ -82,11 +88,14 @@ int main(void)
 						break;
 					}
 				}
-				//FPGA,串口屏通信 CW
+				//FPGA,串口屏通信 
+				FPGA_SendType(AM_TYPE);
 				break;
 		 		case 2:
 					deltaId=find_min_index_diff_above_threshold(mag_arr,15,parameter_b[1]*mag_max);
 					F=deltaId*1e3;
+					guji_mf(F,&mf,parameter_s[7]);
+					FPGA_SendType(FM_TYPE);
 				break;
 			}
 			
@@ -108,6 +117,7 @@ int main(void)
 				
 				guji_2ask_2(&Rb,parameter_s[7],parameter_s[8]);
 				//通信
+				FPGA_SendType(ASK_TYPE);
 			}
 			else{
 				if(!shibie_2fskor2psk(parameter_s[7],parameter_s[8]))
@@ -115,12 +125,14 @@ int main(void)
 					//0 :2fsk
 //					VOFA_SendData(adc_buff,FFT_Mag);
 					guji_2fsk_2(&Rb,&h,parameter_s[7],parameter_s[8]);
+					FPGA_SendType(FSK_TYPE);
 					//通信
 				}else{
 					//1:psk
 //					VOFA_SendData(adc_buff,FFT_Mag);
 					guji_2psk_2(&Rb);
 					//通信
+					FPGA_SendType(PSK_TYPE);
 				}
 			}
 		}

@@ -5,17 +5,16 @@
 
 extern uint32_t ui32SysClock;//单片机主频率
 extern bool basic_flag;
-
-uint16_t AM_baoluo[1024];
 bool getnum_all=false;
+uint16_t AM_baoluo[1024];
+
 uint8_t * p=(uint8_t *)AM_baoluo;
 
-uint8_t u_buf[1024];//printf_u的缓存区
+uint8_t u_buf[256];//printf_u的缓存区
 //以UART0为例子 PA0为RX PA1为TX 配置UART 115200 bps 8-N-1 format ONLY TO SEND
 //使用时将UART0换为UARTn ,PA0换为Pyx,PA1换为Pyx
 
 #define UDMA_CHANNEL_UART0RX    8
-#define UART_O_DR               0x00000000  // UART Data
 //可以使用(UART0->DR)
 ///* The control table used by the uDMA controller.  This table must be aligned
 // * to a 1024 byte boundary. */
@@ -33,6 +32,45 @@ extern uint8_t pui8ControlTable[1024];
 /*************ATTENTON PLS!!!!!!THIS "UDMA_IRQHandler" ISR IS USED FOR for uDMA interrupts from the memory channel LOL***********/
 //IntEnable(INT_UDMA);//Enable interrupts from the uDMA software channel.不是用来硬件传输至memory的
 
+//基础函数 const修饰表示在该函数中pui8Buffer为不可修改，但不代表传入的pui8Buffer一定是不可修改的数组
+//const修饰符只对函数内部的变量有约束作用，它保证了在该函数内部不会修改数据。
+//其他函数仍然可以自由地访问和修改buffer的内容，只要这些修改不在UARTSend函数的调用期间发生。
+void UARTSend(uint32_t ui32Base, const uint8_t *pui8Buffer, uint32_t ui32Count)
+{
+		while(ui32Count--)
+		{
+			/*
+
+			单片机波特率 = 115200bps（约 11.5KB/s 理论速度）
+			发送 FIFO 深度 = 16 字节
+			你连续调用 UARTCharPut 发送 1024 字节
+			单片机快速填充发送 FIFO（例如在 1μs 内写入 16 字节）。
+			硬件开始以 115200bps 的速度串行输出（约 87μs/字节）。
+			FIFO 满时：
+			当 FIFO 被填满后，UARTCharPut 会 阻塞等待。
+			只有等 FIFO 中至少空出 1 字节时（即硬件已发出 1 字节），才能继续写入。
+			*/
+			MAP_UARTCharPut(ui32Base, *pui8Buffer++);//put推出，即发送 
+			
+			//MAP_UARTCharPutNonBlocking(ui32Base, *pui8Buffer++);
+			/*
+			立即写入或丢弃：
+
+			如果 FIFO 未满，将数据写入 FIFO，并返回成功。
+			如果 FIFO 已满，直接丢弃数据，返回失败（不等待）
+			会丢数据 damn
+			*/
+		}
+}
+
+void FPGA_SendType(uint8_t type)
+{
+	uint8_t i;
+	for(i=0;i<20;i++)
+	{
+		MAP_UARTCharPut(UART0_BASE,type);
+	}
+}
 //This interrupt will occur when a DMA
 // transfer is complete using the UART1 uDMA channel. 其他UART的中断也是由这个ISR处理
 void UART0_IRQHandler(void) {
@@ -66,8 +104,6 @@ void UART0_IRQHandler(void) {
 			MAP_UARTDMADisable(UART0_BASE, UART_DMA_RX);
 		}
 }
-
-
 void DMA_UART_RX_Init(void)
 {
 	// 启用DMA控制器时钟
@@ -95,7 +131,7 @@ void DMA_UART_RX_Init(void)
 	MAP_uDMAChannelTransferSet(
 			UDMA_CH8_UART0RX | UDMA_PRI_SELECT,  
 			UDMA_MODE_BASIC,                                  //UDMA_MODE_AUTO
-			(void *)(UART0_BASE + UART_O_DR),                // 源地址
+			(void *)(UART0->DR),                // 源地址
 			AM_baoluo,                // 目标地址
 			1024                               
 			);
@@ -106,8 +142,6 @@ void DMA_UART_RX_Init(void)
 	
 //	IntPrioritySet(INT_UDMA, 0);  // 可选：设置优先级		
 	uDMAChannelEnable(UDMA_CH8_UART0RX);
-			
-	
 }
 
 void UART_Init(void)
@@ -151,54 +185,8 @@ void UART_Init(void)
 }
 
 
-//基础函数 const修饰表示在该函数中pui8Buffer为不可修改，但不代表传入的pui8Buffer一定是不可修改的数组
-//const修饰符只对函数内部的变量有约束作用，它保证了在该函数内部不会修改数据。
-//其他函数仍然可以自由地访问和修改buffer的内容，只要这些修改不在UARTSend函数的调用期间发生。
-void UARTSend(uint32_t ui32Base, const uint8_t *pui8Buffer, uint32_t ui32Count)
-{
-		while(ui32Count--)
-		{
-			/*
 
-			单片机波特率 = 115200bps（约 11.5KB/s 理论速度）
-			发送 FIFO 深度 = 16 字节
-			你连续调用 UARTCharPut 发送 1024 字节
-			单片机快速填充发送 FIFO（例如在 1μs 内写入 16 字节）。
-			硬件开始以 115200bps 的速度串行输出（约 87μs/字节）。
-			FIFO 满时：
-			当 FIFO 被填满后，UARTCharPut 会 阻塞等待。
-			只有等 FIFO 中至少空出 1 字节时（即硬件已发出 1 字节），才能继续写入。
-			*/
-			MAP_UARTCharPut(ui32Base, *pui8Buffer++);//put推出，即发送 
-			
-			//MAP_UARTCharPutNonBlocking(ui32Base, *pui8Buffer++);
-			/*
-			立即写入或丢弃：
 
-			如果 FIFO 未满，将数据写入 FIFO，并返回成功。
-			如果 FIFO 已满，直接丢弃数据，返回失败（不等待）
-			会丢数据 damn
-			*/
-		}
-}
-#define VOFA_SendFloatEND(ui32Base) do { \
-    MAP_UARTCharPut(ui32Base, 0x00); \
-    MAP_UARTCharPut(ui32Base, 0x00); \
-    MAP_UARTCharPut(ui32Base, 0x80); \
-    MAP_UARTCharPut(ui32Base, 0x7F); \
-} while (0)
-void VOFA_SendFloat(uint32_t ui32Base,const float * pfbuffer,uint32_t ui32Count)
-{
-	while(ui32Count--)
-	{
-		MAP_UARTCharPut(ui32Base, *(unsigned char *)pfbuffer);//put推出，即发送 
-		MAP_UARTCharPut(ui32Base, *(((unsigned char *)pfbuffer)+1));
-		MAP_UARTCharPut(ui32Base, *(((unsigned char *)pfbuffer)+2));
-		MAP_UARTCharPut(ui32Base, *(((unsigned char *)pfbuffer)+3));
-		pfbuffer++;
-		VOFA_SendFloatEND(ui32Base);
-	}
-}
 
 //使用宏，更加便捷，适用于单个工程要使用多个UART发送数据，见UART.h
 
@@ -240,8 +228,8 @@ void ProcessData(uint8_t* buf)
 		}
 	}
 }
-void
-UART7_IRQHandler(void)
+
+void UART7_IRQHandler(void)
 {
 	uint32_t ui32Status;
 
@@ -287,7 +275,6 @@ UART7_IRQHandler(void)
 }
 //_UART7
 //PC5:TX   RC4:RX
-
 void VOFA_init(void)
 {
 		
@@ -316,7 +303,24 @@ void VOFA_init(void)
 		//当然也要有总的开启"可屏蔽"中断的	MAP_IntMasterEnable  常在main中while前执行
 		//在main中执行
 }
-
+#define VOFA_SendFloatEND(ui32Base) do { \
+    MAP_UARTCharPut(ui32Base, 0x00); \
+    MAP_UARTCharPut(ui32Base, 0x00); \
+    MAP_UARTCharPut(ui32Base, 0x80); \
+    MAP_UARTCharPut(ui32Base, 0x7F); \
+} while (0)
+void VOFA_SendFloat(uint32_t ui32Base,const float * pfbuffer,uint32_t ui32Count)
+{
+	while(ui32Count--)
+	{
+		MAP_UARTCharPut(ui32Base, *(unsigned char *)pfbuffer);//put推出，即发送 
+		MAP_UARTCharPut(ui32Base, *(((unsigned char *)pfbuffer)+1));
+		MAP_UARTCharPut(ui32Base, *(((unsigned char *)pfbuffer)+2));
+		MAP_UARTCharPut(ui32Base, *(((unsigned char *)pfbuffer)+3));
+		pfbuffer++;
+		VOFA_SendFloatEND(ui32Base);
+	}
+}
 void VOFA_SendADC_Buf(int16_t* adc_buff)
 {
 	uint16_t i;

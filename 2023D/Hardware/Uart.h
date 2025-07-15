@@ -10,7 +10,7 @@
 
 
 
-extern uint8_t u_buf[1024];//发送缓存区
+extern uint8_t u_buf[256];//发送缓存区
 extern float32_t parameter_b[64];
 extern float32_t parameter_s[64];
 //UART0_BASE  UART2_BASE是自定义的enum用来指定所要发送的UART
@@ -58,6 +58,7 @@ typedef enum {
 */
 void UART_Init(void);
 void UARTSend(uint32_t ui32Base, const uint8_t *pui8Buffer, uint32_t ui32Count);
+void FPGA_SendType(uint8_t type);
 void VOFA_init(void);
 void VOFA_SendFloat(uint32_t ui32Base,const float * pfbuffer,uint32_t ui32Count);
 void VOFA_SendADC_Buf(int16_t* adc_buff);

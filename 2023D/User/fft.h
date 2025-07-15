@@ -5,6 +5,7 @@
 void Myfft(void);
 uint8_t shibie_basic(float *mag,float32_t*mag_max,float32_t mag_arr[]);
 uint8_t find_min_index_diff_above_threshold(float32_t mag_arr[], uint32_t size, float32_t thred);
+void guji_mf(uint16_t F,float32_t* mf,float32_t range_half);
 bool shibie_2ask(int16_t adc_buff[],uint8_t range,float32_t thred);
 uint8_t guji_2ask(void);
 bool shibie_2fskor2psk(float32_t range_half,float32_t thred);
