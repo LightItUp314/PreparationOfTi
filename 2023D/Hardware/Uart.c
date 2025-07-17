@@ -189,9 +189,7 @@ void UART_Init(void)
 
 
 //使用宏，更加便捷，适用于单个工程要使用多个UART发送数据，见UART.h
-
 //sprintf 函数的返回值是格式化字符串的长度（不包括终止符 \0），类型为 int。在大多数情况下，int 类型的返回值可以安全地赋值给 size_t 类型的变量，因为 size_t 通常是一个无符号整数类型，足够大以表示字符串的长度。
-
 //以UART0的接收为例子
 
 bool UART_RECEIVE_ERROR=false;

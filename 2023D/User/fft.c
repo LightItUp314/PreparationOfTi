@@ -316,7 +316,7 @@ void guji_mf(uint16_t F,float32_t* mf,float32_t range_half)
 	}
 	float32_t measure=mag_fm_arr[2]/mag_fm_arr[3];
 	mf_id=binarySearchDescending(measure_arr,measure_len,measure);
-	GetAccurateMf(mf_id,2,&mf_id);
+//	GetAccurateMf(mf_id,2,&mf_id);//目前没有归一化，函数不能用
 	*mf=1+0.05f*mf_id;
 }
 bool shibie_2ask(int16_t adc_buff[],uint8_t range,float32_t thred)
@@ -391,7 +391,7 @@ bool shibie_2fskor2psk(float32_t range_half,float32_t thred)
 //	uint16_t id_max;
 	float32_t max_temp,max_temp1;
 	uint16_t id_max;
-	Seek_Max2(FFT_Mag,id_fc_sample-delta_id,&id_max);
+	Seek_Max0(FFT_Mag,id_fc_sample-delta_id,&max_temp,&id_max);
 	for(i=0;i<5;i++)
 	{
 		uint16_t id_f2sk_r_temp=round(0.5*(i+1)*1e3*FFT_LEN/parameter_s[0]);//010101.....

@@ -23,7 +23,7 @@ uint16_t Rb;
 float32_t h;
 float32_t ma;
 float32_t mf;
-bool basic_flag=true;
+bool basic_flag=false;
 bool ADC_Done=false;
 float32_t parameter_b[64];
 float32_t parameter_s[64];
@@ -79,6 +79,7 @@ int main(void)
 				
 				
 				case 1:
+				
 				for(i=0;i<5;i++)
 				{
 					if(mag_arr[i]>parameter_b[1]*mag_max)
@@ -92,6 +93,7 @@ int main(void)
 				FPGA_SendType(AM_TYPE);
 				break;
 		 		case 2:
+					VOFA_SendData(adc_buff,FFT_Mag);
 					deltaId=find_min_index_diff_above_threshold(mag_arr,15,parameter_b[1]*mag_max);
 					F=deltaId*1e3;
 					guji_mf(F,&mf,parameter_s[7]);
@@ -108,7 +110,7 @@ int main(void)
 			while(!ADC_Done);
 			ADC_Done=false;
 			Myfft();
-//			VOFA_SendData(adc_buff,FFT_Mag);
+			VOFA_SendData(adc_buff,FFT_Mag);
 //			VOFA_SendADC_Buf(adc_buff);
 			if(shibie_2ask(adc_buff,parameter_s[1],parameter_s[2]))
 			{
