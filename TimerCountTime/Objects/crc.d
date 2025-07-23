@@ -1,0 +1,14 @@
+.\objects\crc.o: Libarary\crc.c
+.\objects\crc.o: .\source\ti/devices/msp432e4/inc/msp432e411y.h
+.\objects\crc.o: .\source\third_party\CMSIS\Include\core_cm4.h
+.\objects\crc.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\crc.o: .\source\third_party\CMSIS\Include\cmsis_version.h
+.\objects\crc.o: .\source\third_party\CMSIS\Include\cmsis_compiler.h
+.\objects\crc.o: .\source\third_party\CMSIS\Include\cmsis_armcc.h
+.\objects\crc.o: .\source\third_party\CMSIS\Include\mpu_armv7.h
+.\objects\crc.o: .\source\ti/devices/msp432e4/inc/system_msp432e411y.h
+.\objects\crc.o: Libarary\types.h
+.\objects\crc.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\crc.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_ccm.h
+.\objects\crc.o: Libarary\crc.h
+.\objects\crc.o: Libarary\debug.h

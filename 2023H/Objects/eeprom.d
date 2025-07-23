@@ -1,0 +1,12 @@
+.\objects\eeprom.o: Libarary\eeprom.c
+.\objects\eeprom.o: Libarary\types.h
+.\objects\eeprom.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\eeprom.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\eeprom.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_eeprom.h
+.\objects\eeprom.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_flash.h
+.\objects\eeprom.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\eeprom.o: Libarary\debug.h
+.\objects\eeprom.o: Libarary\flash.h
+.\objects\eeprom.o: Libarary\interrupt.h
+.\objects\eeprom.o: Libarary\sysctl.h
+.\objects\eeprom.o: Libarary\eeprom.h

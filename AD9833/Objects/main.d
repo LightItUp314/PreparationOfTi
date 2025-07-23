@@ -48,4 +48,4 @@
 .\objects\main.o: .\source\ti/devices/msp432e4/driverlib/watchdog.h
 .\objects\main.o: User\system_init.h
 .\objects\main.o: .\Hardware\AD9833.h
-.\objects\main.o: .\source\delay.h
+.\objects\main.o: .\Hardware\SPI_u.h

@@ -898,6 +898,16 @@
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
+              <FileName>SPI_u.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\SPI_u.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI_u.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\SPI_u.h</FilePath>
+            </File>
+            <File>
               <FileName>AD9833.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\AD9833.h</FilePath>

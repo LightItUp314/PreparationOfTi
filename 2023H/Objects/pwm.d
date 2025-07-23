@@ -1,0 +1,16 @@
+.\objects\pwm.o: Libarary\pwm.c
+.\objects\pwm.o: .\source\ti/devices/msp432e4/inc/msp432e411y.h
+.\objects\pwm.o: .\source\third_party\CMSIS\Include\core_cm4.h
+.\objects\pwm.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\pwm.o: .\source\third_party\CMSIS\Include\cmsis_version.h
+.\objects\pwm.o: .\source\third_party\CMSIS\Include\cmsis_compiler.h
+.\objects\pwm.o: .\source\third_party\CMSIS\Include\cmsis_armcc.h
+.\objects\pwm.o: .\source\third_party\CMSIS\Include\mpu_armv7.h
+.\objects\pwm.o: .\source\ti/devices/msp432e4/inc/system_msp432e411y.h
+.\objects\pwm.o: Libarary\types.h
+.\objects\pwm.o: D:\HardwareDevelop\keil_MDK_C51\keil_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\pwm.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_pwm.h
+.\objects\pwm.o: .\Source\ti\devices\msp432e4\driverlib\inc/hw_sysctl.h
+.\objects\pwm.o: Libarary\debug.h
+.\objects\pwm.o: Libarary\interrupt.h
+.\objects\pwm.o: Libarary\pwm.h

@@ -1,0 +1,90 @@
+
+//void UART0_IRQHandler(void)
+//{
+//	uint32_t ui32Status;
+//	
+//	ui32Status = MAP_UARTIntStatus(UART0_BASE, true);
+////! \param bMasked is \b false if the raw interrupt status is required and
+////! \b true if the masked interrupt status is required.
+////原始中断状态（Raw Interrupt Status）：
+////硬件实际产生的中断状态，不受中断使能寄存器影响。
+////用于调试和故障排除。
+////掩码中断状态（Masked Interrupt Status）：
+////经过中断使能寄存器过滤后的中断状态。
+////用于中断处理，只有被使能的中断才会被处理器处理
+//	
+//	//清除中断
+//	MAP_UARTIntClear(UART0_BASE, ui32Status);
+//	
+////! This UARTCharsAvail function returns a flag indicating whether or not there is data
+////! available in the receive FIFO.
+//	//都这么用while形式，应该不用考虑卡死的情况
+//	while(MAP_UARTCharsAvail(UART0_BASE)){
+//		receivedByte = MAP_UARTCharGetNonBlocking(UART0_BASE);//获取接收数据
+//		/*
+//		..........通常是状态机
+//		*/
+//		if(index_p<1024*2){
+//		*(p+index_p)=receivedByte;
+//			index_p++;
+//		}else{
+//			getnum_all=true;
+//			MAP_UARTIntDisable(UART0_BASE, UART_INT_RX);
+//			break;
+//		}
+////		switch(UART0_ReceiveState){
+////			case UART_RECEIVE_IDLE:
+////				if(receivedByte==HEAD){
+////					uart_index++;
+////					if(uart_index!=0){
+////						UART0_ReceiveState=UART_RECEIVE_HEADER;
+////					}
+////					else{
+////						UART0_ReceiveState=UART_RECEIVE_DATA;
+////					}
+////				}
+////				break;
+////			case UART_RECEIVE_HEADER:
+////				if(receivedByte==HEAD)
+////				{
+////					if(uart_index<0)
+////					{
+////						uart_index++;
+////					}
+////					if(uart_index==0){
+////						UART0_ReceiveState=UART_RECEIVE_DATA;
+////					}
+////				}
+////				else {
+////					UART_RECEIVE_ERROR=true;
+////					uart_index++;
+////					if(uart_index==0){
+////						UART0_ReceiveState=UART_RECEIVE_DATA;
+////					}
+////				}
+////				break;
+////			case UART_RECEIVE_DATA:
+////				UART0_ReceiveBuf[uart_index++]=receivedByte;
+////				if(uart_index==ReceiveBufLenth){
+////					UART0_ReceiveState=UART_RECEIVE_TAIL;
+////					uart_index=0;
+////				}
+////				break;
+////			case UART_RECEIVE_TAIL:
+////				if(receivedByte==TAIL){
+////					uart_index--;
+////					if(uart_index==-HEAD_TAIL_LENTH){
+////						UART0_ReceiveState=UART_RECEIVE_IDLE;
+////					}
+////				}else{
+////					UART_RECEIVE_ERROR=true;
+////					uart_index--;
+////					if(uart_index==-HEAD_TAIL_LENTH){
+////						UART0_ReceiveState=UART_RECEIVE_IDLE;
+////					}
+////				}
+////				break;
+////			
+////		}
+//	}
+//}

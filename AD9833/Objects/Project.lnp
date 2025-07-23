@@ -33,6 +33,7 @@
 ".\objects\udma.o"
 ".\objects\usb.o"
 ".\objects\watchdog.o"
+".\objects\spi_u.o"
 ".\objects\ad9833.o"
 ".\objects\main.o"
 ".\objects\system_init.o"
