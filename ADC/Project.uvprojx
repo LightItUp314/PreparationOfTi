@@ -907,6 +907,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\ADC_u.h</FilePath>
             </File>
+            <File>
+              <FileName>TIM_u.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\TIM_u.c</FilePath>
+            </File>
+            <File>
+              <FileName>TIM_u.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\TIM_u.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

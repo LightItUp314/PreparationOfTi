@@ -47,3 +47,5 @@
 .\objects\main.o: .\source\ti/devices/msp432e4/driverlib/usb.h
 .\objects\main.o: .\source\ti/devices/msp432e4/driverlib/watchdog.h
 .\objects\main.o: User\system_init.h
+.\objects\main.o: .\Hardware\TIM_u.h
+.\objects\main.o: .\Hardware\ADC_u.h

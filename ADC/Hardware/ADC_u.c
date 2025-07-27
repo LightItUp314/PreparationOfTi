@@ -3,7 +3,7 @@
 /* The control table used by the uDMA controller.  This table must be aligned
  * to a 1024 byte boundary. */
  
- 
+
 #if defined(__ICCARM__)
 #pragma data_alignment=1024
 uint8_t pui8ControlTable[1024];
@@ -14,9 +14,12 @@ uint8_t pui8ControlTable[1024];
 uint8_t pui8ControlTable[1024] __attribute__ ((aligned(1024)));
 #endif
 
-uint16_t adc_buff[FFT_LENGTH];
-void ADC_SimpleInit(void)
-{
+volatile bool ADC0_Done=false;
+volatile bool ADC1_Done=false;
+uint16_t adc_buff[FFT_LEN];
+int16_t adc0_buf[FFT_LEN];
+int16_t adc1_buf[FFT_LEN];
+void ADC_SimpleInit(void){
 	//modul init*****************************************
 	/* Enable the clock to GPIO Port E and wait for it to be ready */
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
@@ -47,7 +50,7 @@ void ADC_SimpleInit(void)
 		//首先配置dma相关参数
 		MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UDMA);
 		while(!(SysCtlPeripheralReady(SYSCTL_PERIPH_UDMA)));
-
+		//DMA Init
 		MAP_uDMAEnable();
 		MAP_uDMAControlBaseSet(pui8ControlTable);
 		MAP_uDMAChannelAssign(UDMA_CH16_ADC0_2);//ADC0_2表示ADC0的Squencer 2
@@ -87,8 +90,7 @@ void ADC_SimpleInit(void)
 }
 //DMA传输完成后：ADC模块（而非DMA控制器）会生成ADC_INT_DMA_SSx中断标志
 //这种设计是为了让ADC模块统一管理所有中断源（包括DMA完成事件）
-void ADC0SS3_IRQHandler(void)
-{
+void ADC0SS2_IRQHandler(void){
     uint32_t getIntStatus;
 
     /* Get the interrupt status from the ADC */
@@ -111,4 +113,169 @@ void ADC0SS3_IRQHandler(void)
 //num=sizeof(adc_buff)/sizeof(uint16_t)
 				MAP_uDMAChannelEnable(UDMA_CH16_ADC0_2);//传输完成后channel会自动置为stop即disable
     }
+}
+/*Dual ADC Part*/
+void ADC_DMA_IT_Init(void){
+	MAP_ADCIntClearEx(ADC0_BASE, ADC_INT_DMA_SS0);
+  MAP_ADCIntEnableEx(ADC0_BASE, ADC_INT_DMA_SS0);
+	MAP_ADCIntClearEx(ADC1_BASE, ADC_INT_DMA_SS0);
+  MAP_ADCIntEnableEx(ADC1_BASE, ADC_INT_DMA_SS0);
+	
+	MAP_IntPrioritySet(INT_ADC0SS0, 2);	
+	MAP_IntPrioritySet(INT_ADC1SS0, 2);	
+	//
+	MAP_IntEnable(INT_ADC0SS0);
+	MAP_IntEnable(INT_ADC1SS0);
+}
+void ADC_DualSimu_UDMA_Init(void){
+	/* Enable the DMA and Configure Channel for ADC0 and ADC1 sequencer for
+	 * Basic mode of transfer */
+	MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UDMA);
+	while(!(SysCtlPeripheralReady(SYSCTL_PERIPH_UDMA)));
+	MAP_uDMAEnable();
+	MAP_uDMAControlBaseSet(pui8ControlTable);
+	MAP_uDMAChannelAssign(UDMA_CH14_ADC0_0);
+	MAP_uDMAChannelAttributeDisable(UDMA_CH14_ADC0_0,
+																	UDMA_ATTR_ALTSELECT | UDMA_ATTR_USEBURST |
+																	UDMA_ATTR_HIGH_PRIORITY |
+																	UDMA_ATTR_REQMASK);
+	MAP_uDMAChannelControlSet(UDMA_CH14_ADC0_0 | UDMA_PRI_SELECT,
+														UDMA_SIZE_16 | UDMA_SRC_INC_NONE | UDMA_DST_INC_16 |
+														UDMA_ARB_1);
+//	MAP_uDMAChannelTransferSet(UDMA_CH14_ADC0_0 | UDMA_PRI_SELECT,
+//														 UDMA_MODE_BASIC,
+//														 (void *)&ADC0->SSFIFO0, (void *)&adc0_buf,
+//														 FFT_LEN);
+	MAP_uDMAChannelEnable(UDMA_CH14_ADC0_0);
+	MAP_uDMAChannelAssign(UDMA_CH24_ADC1_0);
+	MAP_uDMAChannelAttributeDisable(UDMA_CH24_ADC1_0,
+																	UDMA_ATTR_ALTSELECT | UDMA_ATTR_USEBURST |
+																	UDMA_ATTR_HIGH_PRIORITY |
+																	UDMA_ATTR_REQMASK);
+	MAP_uDMAChannelControlSet(UDMA_CH24_ADC1_0 | UDMA_PRI_SELECT,
+														UDMA_SIZE_16 | UDMA_SRC_INC_NONE | UDMA_DST_INC_16 |
+														UDMA_ARB_1);
+//	MAP_uDMAChannelTransferSet(UDMA_CH24_ADC1_0 | UDMA_PRI_SELECT,
+//														 UDMA_MODE_BASIC,
+//														 (void *)&ADC1->SSFIFO0, (void *)&adc1_buf,
+//														 FFT_LEN);
+//	MAP_uDMAChannelEnable(UDMA_CH24_ADC1_0);
+
+}
+//AIN0 :PE3    AIN1:PE2    AIN2:PE1
+//ADC1_BASE use AIN1    ADC0_BASE use AIN0 
+void ADC_DualSimu_Init(void){
+	/* Enable the clock to GPIO Port E and wait for it to be ready */
+  MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+  while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOE)));
+	/* Configure PE2 as ADC input channel */
+	MAP_GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_2);
+	
+	/* Enable the clock to ADC-1 and wait for it to be ready */
+	MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
+	while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_ADC1)))
+	{
+	}
+
+	/* Configure Sequencer 0 to sample the analog channel : AIN0. The
+	 * end of conversion and interrupt generation is set for AIN0 */
+	MAP_ADCSequenceStepConfigure(ADC1_BASE, 0, 0, ADC_CTL_CH1 |
+															 ADC_CTL_END);
+
+	MAP_ADCSequenceConfigure(ADC1_BASE, 0, ADC_TRIGGER_TIMER, 3);
+
+	/* Enable the DMA request from ADC0 Sequencer 0 */
+//	MAP_ADCSequenceDMAEnable(ADC1_BASE, 0);
+
+	/* Configure PE3 as ADC input channel */
+	MAP_GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
+	
+	/* Enable the clock to ADC-1 and wait for it to be ready */
+	MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+	while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_ADC0)))
+	{
+	}
+
+	/* Configure Sequencer 0 to sample the analog channel : AIN0. The
+	 * end of conversion and interrupt generation is set for AIN0 */
+	MAP_ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_CH0 |
+															 ADC_CTL_END);
+
+	/* Enable sample sequence 3 with a Processor signal trigger.  Sequencer 0
+	 * will do a single sample*/
+	MAP_ADCSequenceConfigure(ADC0_BASE, 0, ADC_TRIGGER_TIMER, 3);
+
+	/* Enable the DMA request from ADC0 Sequencer 0 */
+//	MAP_ADCSequenceDMAEnable(ADC0_BASE, 0);
+
+	
+	
+	ADC_DualSimu_UDMA_Init();
+	ADC_DMA_IT_Init();
+	/* Since sample sequence 0 is now configured, it must be enabled. */
+	MAP_ADCSequenceEnable(ADC1_BASE, 0);
+	/* Since sample sequence 32 is now configured, it must be enabled. */
+	MAP_ADCSequenceEnable(ADC0_BASE, 0);
+}
+/*触发与退出函数*/
+void ADC1_DualSimu_TIM_Stop(void){
+//	MAP_ADCSequenceDMADisable(ADC0_BASE, 0);
+//	MAP_ADCSequenceDMADisable(ADC1_BASE, 0);
+	HWREG(ADC1_BASE + ADC_O_ACTSS) &= ~(0x100 << 0);
+	if(ADC0_Done)
+	MAP_TimerDisable(TIMER0_BASE, TIMER_A);
+}
+
+void ADC0_DualSimu_TIM_Stop(void){
+//	MAP_ADCSequenceDMADisable(ADC0_BASE, 0);
+	
+//	MAP_ADCSequenceDMADisable(ADC1_BASE, 0);
+	HWREG(ADC0_BASE + ADC_O_ACTSS) &= ~(0x100 << 0);
+	if(ADC1_Done)
+	MAP_TimerDisable(TIMER0_BASE, TIMER_A);
+}
+void ADC_DualSimu_TIM_Start(void){
+		/* Reconfigure the channel control structure and enable the channel */
+	MAP_uDMAChannelTransferSet(UDMA_CH14_ADC0_0 | UDMA_PRI_SELECT,
+														 UDMA_MODE_BASIC,
+														 (void *)&ADC0->SSFIFO0, (void *)&adc0_buf,
+														 FFT_LEN);
+	MAP_uDMAChannelTransferSet(UDMA_CH24_ADC1_0 | UDMA_PRI_SELECT,
+														 UDMA_MODE_BASIC,
+														 (void *)&ADC1->SSFIFO0, (void *)&adc1_buf,
+														 FFT_LEN);
+	MAP_uDMAChannelEnable(UDMA_CH14_ADC0_0);//传输完成后channel会自动置为stop即disable
+	MAP_uDMAChannelEnable(UDMA_CH24_ADC1_0);//传输完成后channel会自动置为stop即disable
+	
+	MAP_ADCSequenceDMAEnable(ADC0_BASE, 0);
+	MAP_ADCSequenceDMAEnable(ADC1_BASE, 0);
+//	//添加同步触发
+//	HWREG(ADC0_BASE+ADC_O_PSSI)|=ADC_TRIGGER_WAIT|(1<<0);//0表示ss0
+//	HWREG(ADC1_BASE+ADC_O_PSSI)|=ADC_TRIGGER_SIGNAL|ADC_TRIGGER_WAIT|(1<<0);//0表示ss0
+	
+	HWREG(TIMER0_BASE + TIMER_O_TAV)=0;//使用的32位模式，操作TIMER_O_TAV就够了
+	MAP_TimerEnable(TIMER0_BASE, TIMER_A);
+	 
+}
+/*
+	uint32_t getIntStatus;
+	getIntStatus = MAP_ADCIntStatusEx(ADC0_BASE, true);
+	if((getIntStatus & ADC_INT_DMA_SS0) == ADC_INT_DMA_SS0)
+	{
+			MAP_ADCIntClearEx(ADC0_BASE, ADC_INT_DMA_SS0);
+	}
+使用底层操作加快速度*/
+void ADC0SS0_IRQHandler(void){
+	if(((HWREG(ADC0_BASE+ADC_O_ISC))&ADC_INT_DMA_SS0)==ADC_INT_DMA_SS0){
+		MAP_ADCIntClearEx(ADC0_BASE, ADC_INT_DMA_SS0);
+		ADC0_DualSimu_TIM_Stop();
+		ADC0_Done=true;
+	}
+}
+void ADC1SS0_IRQHandler(void){
+	if(((HWREG(ADC1_BASE+ADC_O_ISC))&ADC_INT_DMA_SS0)==ADC_INT_DMA_SS0){
+		HWREG(ADC1_BASE+ADC_O_ISC)=ADC_INT_DMA_SS0;
+		ADC1_DualSimu_TIM_Stop();
+		ADC1_Done=true;
+	}
 }

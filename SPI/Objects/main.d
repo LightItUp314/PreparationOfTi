@@ -47,5 +47,6 @@
 .\objects\main.o: .\source\ti/devices/msp432e4/driverlib/usb.h
 .\objects\main.o: .\source\ti/devices/msp432e4/driverlib/watchdog.h
 .\objects\main.o: User\system_init.h
+.\objects\main.o: User\delay.h
 .\objects\main.o: User\W25Q64.h
 .\objects\main.o: .\Hardware\SPI_u.h

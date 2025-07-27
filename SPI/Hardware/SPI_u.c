@@ -1,5 +1,7 @@
 #include "SPI_u.h"
+#include "hamming.h"
 //ssi3clk pq0 ssi3Fss pq1 SSI3XDAT0 PQ2(master的TX)  SSI3XDAT1  PQ3(master的RX)
+
 uint16_t SSI_PutData[SSI_PUTLENGTH];
 
 
@@ -100,69 +102,73 @@ Channel Control Base Pointer (DMACTLBASE) register. The base address must be ali
 byte boundary.*/
 	MAP_uDMAControlBaseSet(pui8ControlTable);
 	
-	MAP_uDMAChannelAssign(UDMA_CH11_SSI0TX);
+	MAP_uDMAChannelAssign(UDMA_CH11_SSI1TX);
 	//then cig the atrributes
-	MAP_uDMAChannelAttributeDisable(UDMA_CH11_SSI0TX,                                     
+	MAP_uDMAChannelAttributeDisable(UDMA_CH11_SSI1TX,                                     
 																	UDMA_ATTR_ALTSELECT | UDMA_ATTR_USEBURST |
 																	UDMA_ATTR_HIGH_PRIORITY |
 																	UDMA_ATTR_REQMASK);
 	
-	MAP_uDMAChannelControlSet(UDMA_CH11_SSI0TX|UDMA_PRI_SELECT,
+	MAP_uDMAChannelControlSet(UDMA_CH11_SSI1TX|UDMA_PRI_SELECT,
 														UDMA_SIZE_16 | UDMA_SRC_INC_16 | UDMA_DST_INC_NONE | UDMA_ARB_4);
-  MAP_uDMAChannelTransferSet(	UDMA_CH11_SSI0TX | UDMA_PRI_SELECT,  // 通道30 + 主控制结构
-			UDMA_MODE_BASIC,                  // 自动请求模式（对应XFERMODE=2）
-			(void *)SSI_PutData,                // 源地址
-			(void *)(&SSI0->DR),                // 目标地址  UART5_BASE 或者用 (void *)(&UART1->DR)
+  MAP_uDMAChannelTransferSet(	UDMA_CH11_SSI1TX | UDMA_PRI_SELECT,  // 通道30 + 主控制结构
+			UDMA_MODE_AUTO,                  // 自动请求模式（对应XFERMODE=2）
+			(void *)hamming_window,                // 源地址 SSI_PutData
+			(void *)(&SSI1->DR),                // 目标地址  UART5_BASE 或者用 (void *)(&UART1->DR)
 			64                               // 传输项数（8位数据）
 	);	
 	//MAP_uDMAChannelEnable(UDMA_CH11_SSI0TX);
 	//需要dma时再使用
 }
-void SSI0_Init(void)
+void SSI1_Init(void)
 {
 	/* Enable clocks to GPIO Port A and configure pins as SSI */
-    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-    while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA)))
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+    while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOB)))
     {
     }
-
-    MAP_GPIOPinConfigure(GPIO_PA2_SSI0CLK);
-    MAP_GPIOPinConfigure(GPIO_PA3_SSI0FSS);
-    MAP_GPIOPinConfigure(GPIO_PA4_SSI0XDAT0);
-    MAP_GPIOPinConfigure(GPIO_PA5_SSI0XDAT1);
-    MAP_GPIOPinTypeSSI(GPIO_PORTA_BASE, (GPIO_PIN_2 | GPIO_PIN_3 |
+		MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+    while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOE)))
+    {
+    }
+    MAP_GPIOPinConfigure(GPIO_PB5_SSI1CLK);
+    MAP_GPIOPinConfigure(GPIO_PB4_SSI1FSS);
+    MAP_GPIOPinConfigure(GPIO_PE4_SSI1XDAT0);
+    MAP_GPIOPinConfigure(GPIO_PE5_SSI1XDAT1);
+    MAP_GPIOPinTypeSSI(GPIO_PORTB_BASE, (
                                          GPIO_PIN_4 | GPIO_PIN_5));
-
+		MAP_GPIOPinTypeSSI(GPIO_PORTE_BASE, (
+                                         GPIO_PIN_4 | GPIO_PIN_5));
     /* Enable the clock to SSI-0 module and configure the SSI Master */
-    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI0);
-    while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_SSI0)))
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);
+    while(!(MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_SSI1)))
     {
     }
 
-    MAP_SSIConfigSetExpClk(SSI0_BASE, ui32SysClock, SSI_FRF_MOTO_MODE_0,
+    MAP_SSIConfigSetExpClk(SSI1_BASE, ui32SysClock, SSI_FRF_MOTO_MODE_0,
                            SSI_MODE_MASTER, (ui32SysClock/24), 16);
-    MAP_SSIIntEnable(SSI0_BASE, SSI_TXEOT|SSI_DMATX);// Transmit FIFO is empty
+    MAP_SSIIntEnable(SSI1_BASE, SSI_TXEOT|SSI_DMATX);// Transmit FIFO is empty
     //使能TX dma
 		SSI_DMA_Init();
 		
 		
 		
-		MAP_SSIEnable(SSI0_BASE);
+		MAP_SSIEnable(SSI1_BASE);
 		uint32_t trash;
     /* Flush the Receive FIFO    将FIFO清除干净*/
-    while(MAP_SSIDataGetNonBlocking(SSI0_BASE, &trash));
+    while(MAP_SSIDataGetNonBlocking(SSI1_BASE, &trash));
 		
     /* Enable the interrupt generation from SSI-0 */
-    MAP_IntEnable(INT_SSI0);
-		//MAP_SSIDMAEnable(SSI0_BASE,SSI_DMA_TX);
+    MAP_IntEnable(INT_SSI1);
+		//MAP_SSIDMAEnable(SSI1_BASE,SSI_DMA_TX);
 }
-void SSI0_IRQHandler(void)
+void SSI1_IRQHandler(void)
 {
 		uint32_t getIntStatus;
-		getIntStatus = MAP_SSIIntStatus(SSI0_BASE, true);
+		getIntStatus = MAP_SSIIntStatus(SSI1_BASE, true);
 		if((getIntStatus&SSI_TXEOT)!=false)
 		{
-			MAP_SSIIntClear(SSI0_BASE,getIntStatus);
+			MAP_SSIIntClear(SSI1_BASE,getIntStatus);
 			/*
 			
 			
@@ -170,13 +176,15 @@ void SSI0_IRQHandler(void)
 		}
 		if((getIntStatus&SSI_DMATX)!=false)
 		{
-			MAP_SSIDMADisable(SSI0_BASE,SSI_DMA_TX);
-			//			MAP_uDMAChannelDisable(UDMA_CH11_SSI0TX);  可以不需要
-			MAP_SSIIntClear(SSI0_BASE,getIntStatus);
+			MAP_SSIDMADisable(SSI1_BASE,SSI_DMA_TX);
+			//			MAP_uDMAChannelDisable(UDMA_CH11_SSI1TX);  可以不需要
+			MAP_SSIIntClear(SSI1_BASE,getIntStatus);
+			uDMAChannelEnable(UDMA_CH11_SSI1TX);
+			
 			/*
 			//disable the dma transimit
-			//需要先关闭ssi硬件方面的dma传输使能  MAP_SSIDMADisable(SSI0_BASE,SSI_DMA_TX);
-			SSIIntClear(SSI0_BASE,SSI_DMATX);
+			//需要先关闭ssi硬件方面的dma传输使能  MAP_SSIDMADisable(SSI1_BASE,SSI_DMA_TX);
+			SSIIntClear(SSI1_BASE,SSI_DMATX);
 			*/
 		}
 }

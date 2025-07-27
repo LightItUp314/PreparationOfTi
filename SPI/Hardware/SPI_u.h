@@ -14,7 +14,7 @@ extern uint32_t ui32SysClock;
 void SPI_W25Q46_CS(CS_ACTION action);
 void SPI_W25Q46_Init(void);
 uint8_t SPI_W25Q46_SwapByte(uint8_t ByteSend);
-void SSI0_Init(void);
+void SSI1_Init(void);
 	
 
 extern uint16_t SSI_PutData[SSI_PUTLENGTH];

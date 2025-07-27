@@ -1,9 +1,7 @@
 #include "TIM_u.h"
-#include "arm_math.h"
 //使用tim0触发adc采样
-
 extern uint32_t ui32SysClock;//在函数sys_init()中获取
-//以tim0的timer_a或者2合一的32 bit timer为例，trigger adc
+//以tim0的timer_a TRIGGER adc
 void TIM_TriggerADC_Init(void)
 {
 		//启动相应时钟
@@ -17,9 +15,9 @@ void TIM_TriggerADC_Init(void)
 		//也可以用分频器
 		//Sets the timer prescale value. but!!!!!!! The prescaler is only operational when in half-width mode
 		//MAP_TimerPrescaleSet(TIMER0_BASE, TIMER_A , 255);            value which must be between 0 and 255 (inclusive) for 16/32-bit timers.
-	
-
-		MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, (ui32SysClock)/10000);//1Hz 但是ui32SysClock超出了16位的范围 
+		//12000000
+		MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, (ui32SysClock)/10000); 
+		
 		//ADC触发源的使能设置
     MAP_TimerADCEventSet(TIMER0_BASE, TIMER_ADC_TIMEOUT_A);//超时事件实际由TimerA的递减到0触发（硬件自动处理高低位联动），因此仍使用TIMER_ADC_TIMEOUT_A标志
 		//Enables or disables the ADC trigger output.
@@ -30,7 +28,6 @@ void TIM_TriggerADC_Init(void)
 	
 	TimerControlTrigger	控制定时器是否向ADC模块输出触发信号（即是否允许事件实际触发ADC）。
 			
-	
 	TimerADCEventSet 类似“选择闹钟触发条件”（如仅工作日响铃）。
 
 	TimerControlTrigger 类似“打开闹钟开关”（即使条件满足，也需开关开启才会响铃）。
@@ -45,7 +42,6 @@ void TIM_Timeout_Interrup_Init(void)
     // Enable processor interrupts.
     //
     MAP_IntMasterEnable();
-
     //
     // Configure the two 32-bit periodic timers.
     //

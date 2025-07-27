@@ -47,3 +47,4 @@
 .\objects\spi_u.o: .\source\ti/devices/msp432e4/driverlib/udma.h
 .\objects\spi_u.o: .\source\ti/devices/msp432e4/driverlib/usb.h
 .\objects\spi_u.o: .\source\ti/devices/msp432e4/driverlib/watchdog.h
+.\objects\spi_u.o: .\User\hamming.h
